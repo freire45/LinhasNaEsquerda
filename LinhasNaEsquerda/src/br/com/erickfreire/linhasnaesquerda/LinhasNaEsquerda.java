@@ -14,16 +14,17 @@ public class LinhasNaEsquerda extends JPanel {
 	
 	public void paintComponent(Graphics g) {
 		
-		super.paintComponent(g);
-		
-		int i = 1;
-		int y = 0;
-		
-		while(i <= 15) {
-			   
-			g.drawLine(0, 0, getWidth()/2, getHeight()/2 - y);
-			y += 10;
-			i++;
+		int largura = getWidth();
+		int altura = getHeight();
+		int contador = 1;
+		int passos = 0;
+
+		while (altura - passos >= 0) {
+
+			g.drawLine(0, 0, passos, altura - passos);
+			passos = passos + 15;
+			contador++;
+
 		}
 		
 	}
